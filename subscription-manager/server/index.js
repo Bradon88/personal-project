@@ -35,10 +35,10 @@ massive({
 }).catch(err => console.log(err))
 
 //AUTHENTICATION ENDPOINTS
-// app.post('/auth/register', auth.register, auth.emailMiddleware)
-// app.post('/auth/login', auth.login)
-// app.post('/auth/logout', auth.logout)
-// app.get('/auth/get_user_session', auth.getUserSession)
+app.post('/auth/register', authController.register, authController.emailMiddleware)
+app.post('/auth/login', authController.login)
+app.post('/auth/logout', authController.logout)
+app.get('/auth/get_user_session', authController.getUserSession)
 
 //CONTROLLER ENDPOINTS
 // app.get('/api/subs', ctrl.getSubs)
