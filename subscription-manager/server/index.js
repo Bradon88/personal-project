@@ -3,6 +3,9 @@ require('dotenv').config()
 const express = require('express')
 const massive = require('massive')
 const session = require('express-session')
+const bodyParser = require('body-parser')
+const exphbs = require('express-handlebars')
+const nodemailer = require('nodemailer')
 
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 
@@ -45,3 +48,6 @@ app.get('/auth/get_user_session', authController.getUserSession)
 // app.post('/api/subs', ctrl.addSubs)
 // app.put('/api/subs:id', ctrl.editSubs)
 // app.delete('/api/subs:id', ctrl.deleteSubs)
+
+//NODEMAILER
+
