@@ -29,13 +29,21 @@ VALUES
     ('test1@user.com', 'test1password'),
     ('test2@user.com', 'test2password');
 
+
 INSERT INTO subscriptions
     (sub_title, sub_price)
 VALUES
     ('Netflix', 18),
     ('Hulu', 15),
-    ('Xbox Live', 50);
+    ('Xbox Live', 50),
+    ('DisneyPlus', 10),
+    ('Amazon Prime', 12),
+    ('Planet Fitness', 20),
+    ('Freshly', 60),
+    ('Dollar Shave Club', 1),
+    ('Sock Panda', 12);
 
+    
     INSERT INTO my_subscriptions
     (user_id, sub_id, sub_details)
     VALUES

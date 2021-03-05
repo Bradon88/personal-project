@@ -1,4 +1,7 @@
 const bcrypt = require('bcrypt')
+const nodemailer = require('nodemailer')
+
+const {PROJECT_EMAIL, PROJECT_PASSWORD} = process.env
 
 module.exports = {
     register: async (req, res) => {
@@ -12,7 +15,26 @@ module.exports = {
         const hash = bcrypt.hashSync(password, salt)
         const [user] = await db.user.register_user(email, hash)
         req.session.user = user
+        //NODEMAILER
+        try {
+            const transporter = nodemailer.createTransport({
+                service: 'mail.com',
+                auth: {
+                    user: PROJECT_EMAIL,
+                    pass: PROJECT_PASSWORD
+                }
+            })
+            await transporter.sendMail({
+                from: PROJECT_EMAIL,
+                to: email,
+                subject: "Account Created!",
+                text: "Thank you for joining Subscription Manager! This email is to confirm that your account has been created."
+            })
+        } catch(err) {
+            console.log(err)
+        } //END OF NODEMAILER
         return res.status(200).send(req.session.user)
+    
     },
     login: async (req, res) => {
         const db = req.app.get('db')

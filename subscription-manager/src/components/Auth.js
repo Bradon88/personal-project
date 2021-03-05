@@ -27,7 +27,7 @@ class Login extends Component {
         })
         .then((results) => {
             this.props.setUser(results.data)
-            this.props.history.push('/home')
+            this.props.history.push('/mysubscriptions')
         })
     }
 
@@ -39,20 +39,27 @@ class Login extends Component {
         .then((results) => {
             console.log('Login complete!')
             this.props.setUser(results.data)
-            this.props.histroy.push('/home')
+            this.props.histroy.push('/mysubscriptions')
         })
     }
 
     render() {
         return (
             <div>
+                <p>Please Login or Create an Account.</p>
                 <input
                     value = {this.state.email}
                     onChange = {(e) => this.handleEmail(e.target.value)}
+                    placeholder = 'Enter Email'
+                    type = 'email'
+                    required
                 />
                 <input
                     value = {this.state.password}
                     onChange = {(e) => this.handlePassword(e.target.value)}
+                    type = 'password'
+                    placeholder = 'Enter Password'
+                    required
                 />
                 <button onClick={this.handleLogin}>Login</button>
                 <button onClick={this.handleRegister}>Create an Account</button>

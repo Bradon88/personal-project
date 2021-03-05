@@ -3,9 +3,6 @@ require('dotenv').config()
 const express = require('express')
 const massive = require('massive')
 const session = require('express-session')
-const bodyParser = require('body-parser')
-const exphbs = require('express-handlebars')
-const nodemailer = require('nodemailer')
 
 const {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env
 
@@ -15,7 +12,7 @@ app.use(express.json())
 
 //CONTROLLERS
 const authController = require('./controllers/authController')
-const homeController = require('./controllers/homeController')
+const mySubscriptionsController = require('./controllers/mySubscriptionsController')
 const addController = require('./controllers/addController')
 const editCancelController = require('./controllers/editCancelController')
 
@@ -38,7 +35,7 @@ massive({
 }).catch(err => console.log(err))
 
 //AUTHENTICATION ENDPOINTS
-app.post('/auth/register', authController.register, authController.emailMiddleware)
+app.post('/auth/register', authController.emailMiddleware, authController.register)
 app.post('/auth/login', authController.login)
 app.post('/auth/logout', authController.logout)
 app.get('/auth/get_user_session', authController.getUserSession)
@@ -48,6 +45,3 @@ app.get('/auth/get_user_session', authController.getUserSession)
 // app.post('/api/subs', ctrl.addSubs)
 // app.put('/api/subs:id', ctrl.editSubs)
 // app.delete('/api/subs:id', ctrl.deleteSubs)
-
-//NODEMAILER
-
