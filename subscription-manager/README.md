@@ -80,3 +80,9 @@ CREATE TABLE subscriptions (
             - redux/
                 - reducer.js
                 - store.js 
+
+
+# ICEBOX
+- Different plan selections
+- Allow a payment method option
+- Keep and update the actual subscription from the app itself

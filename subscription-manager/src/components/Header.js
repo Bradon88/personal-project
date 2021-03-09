@@ -3,12 +3,12 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 const Header = () => {
-        return <div>
-            <h2>Subscription Manager</h2>
-            <Link to='/'>Login/Signup</Link>
-            <Link to='/mysubscriptions'>My Subscriptions</Link>
-            <Link to='/add'>Add Subscription</Link>
-            <Link to='/editdelete'>Edit/Delete Subscription</Link>
+        return <div className='header'>
+            <h2 className='title'>Subscription Manager</h2>
+            <Link to='/' className='links'>Login/Signup</Link>
+            <Link to='/mysubscriptions' className='links'>My Subscriptions</Link>
+            <Link to='/add' className='links'>Add Subscription</Link>
+                
         </div>
     }
 

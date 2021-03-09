@@ -23,7 +23,7 @@ class Login extends Component {
     handleRegister = () => {
         axios.post('/auth/register', {
             email: this.state.email,
-            passwrod: this.state.password
+            password: this.state.password
         })
         .then((results) => {
             this.props.setUser(results.data)
@@ -39,13 +39,14 @@ class Login extends Component {
         .then((results) => {
             console.log('Login complete!')
             this.props.setUser(results.data)
-            this.props.histroy.push('/mysubscriptions')
+            this.props.history.push('/mysubscriptions')
         })
     }
 
     render() {
         return (
-            <div>
+            <div className='Auth'>
+                <div className='authBox'>
                 <p>Please Login or Create an Account.</p>
                 <input
                     value = {this.state.email}
@@ -63,6 +64,7 @@ class Login extends Component {
                 />
                 <button onClick={this.handleLogin}>Login</button>
                 <button onClick={this.handleRegister}>Create an Account</button>
+                </div>
             </div>
         )
     }

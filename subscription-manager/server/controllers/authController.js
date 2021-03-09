@@ -62,7 +62,7 @@ module.exports = {
         }
         return res.status(200).send(req.session.user)
     },
-    emailMiddleware: (req, res) => {
+    emailMiddleware: (req, res, next) => {
         if(req.body.email.includes('@')){
             return next() 
         } else {
