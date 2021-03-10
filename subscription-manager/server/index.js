@@ -50,6 +50,7 @@ app.get("/auth/get_user_session", authController.getUserSession);
 //CONTROLLER ENDPOINTS
 app.get("/api/subs", addController.getSubs);
 app.get("/api/sub-plans/:id", addController.getSubPlans);
-// app.post('/api/subs', addController.addSubs)
+app.get('/api/my-subs', addController.getMySubscriptions)
+app.post('/api/subs/:sub_plan_id', addController.addSubs);
 // app.put('/api/subs:id', ctrl.editSubs)
-// app.delete('/api/subs:id', ctrl.deleteSubs)
+// app.delete('/api/subs:id', addController.deleteSubs)

@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS users
 DROP TABLE IF EXISTS subscriptions
 DROP TABLE IF EXISTS my_subscriptions
+DROP TABLE IF EXISTS sub_plan
 
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
@@ -16,7 +17,7 @@ CREATE TABLE subscriptions (
 CREATE TABLE sub_plan(
     sub_plan_id SERIAL PRIMARY KEY,
     sub_plan_title VARCHAR(50),
-    sub_price INT,
+    sub_price VARCHAR(50),
     sub_id INT REFERENCES subscriptions(sub_id)
 );
 
@@ -63,8 +64,19 @@ VALUES
     INSERT INTO sub_plan
     (sub_plan_title, sub_price, sub_id)
     VALUES
-    ('Premium', 25, 1),
-    ('Base', 18, 1),
-    ('Premium', 20, 2),
-    ('Base', 15, 2),
-    ('Base', 50, 3);
+    ('Standard', '$8.99 per month', 1),
+    ('Premium', '$17.99 per month', 1),   
+    ('Standard', '$5.99 per month', 2),
+    ('Premium', '11.99 per month', 2),   
+    ('Standard', '$9.99 per month', 3),
+    ('Premium', '$59.99 per year', 3)   
+    ('Standard', '$7.99 per month', 4),
+    ('Premium', '$12.99 per month', 4),
+    ('Standard', '$12.99 per month', 5),
+    ('Standard', '$9.99 per month', 6),
+    ('Premium', '$19.99 per month', 6),
+    ('Standard', '$45.00 per week', 7),
+    ('Standard', '$4.00 per month', 8),
+    ('Premium', '$10.00 per month', 8),
+    ('Standard', '$40.00 per month', 9);
+    
