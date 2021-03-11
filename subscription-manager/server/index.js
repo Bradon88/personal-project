@@ -52,5 +52,5 @@ app.get("/api/subs", addController.getSubs);
 app.get("/api/sub-plans/:id", addController.getSubPlans);
 app.get('/api/my-subs', addController.getMySubscriptions)
 app.post('/api/subs/:sub_plan_id', addController.addSubs);
-// app.put('/api/subs:id', ctrl.editSubs)
-// app.delete('/api/subs:id', addController.deleteSubs)
+app.put('/api/subs/:my_subscriptions_id', addController.editSubs)
+app.delete('/api/subs/:my_subscriptions_id', addController.deleteSubs)

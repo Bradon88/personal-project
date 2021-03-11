@@ -1,3 +1,4 @@
+
 module.exports = {
   getSubs: async (req, res) => {
     const db = req.app.get("db");
@@ -24,5 +25,21 @@ module.exports = {
       const mySubscriptions = await db.subscriptions.get_my_subs(user_id)
       res.status(200).send(mySubscriptions)
   },
-  
+  deleteSubs: async (req, res) => {
+      const db = req.app.get('db')
+      const {my_subscriptions_id} = req.params
+      const {user_id} = req.session.user
+      await db.subscriptions.delete_sub(my_subscriptions_id)
+      const mySubscriptions = await db.subscriptions.get_my_subs(user_id)
+      res.status(200).send(mySubscriptions)
+  },
+  editSubs: async (req, res) => {
+      const db = req.app.get('db')
+      const {sub_plan_id} = req.body
+      const {my_subscriptions_id} = req.params
+      const {user_id} = req.session.user
+      await db.subscriptions.edit_sub(my_subscriptions_id, sub_plan_id)
+      const mySubscriptions = await db.subscriptions.get_my_subs(user_id)
+      res.status(200).send(mySubscriptions)
+  }
 };
