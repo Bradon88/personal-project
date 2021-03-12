@@ -14,6 +14,7 @@ align-items: center;
 
 .links {
   color: white;
+  font-weight: bolder;
 }
 
 /*Login/Signup---------------------------------*/
@@ -30,20 +31,96 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
-border: 2.5px solid black
+border: 2.5px solid black;
+width: 350px;
+height: 300px;
+}
+
+.auth-buttons {
+width: 160px;
+height: 25px;
+background-color: black;
+color: white;
+font-weight: bolder;
+margin-top: 10px;
+}
+
+.auth-input-box {
+  width: 150px;
+  height: 25px;
 }
 
 /*My Subscriptions----------------------------*/
 .sub-buttons-box {
-  background-color: saddlebrown;
   width: 100px;
-  height: 800px;
 }
 
 .sub-buttons {
-  background-color: slategray;
+  background-color: black;
+  color: white;
+  font-weight: bolder;
   width: 130px;
   height: 50px;
+  margin-left: 10px;
+  border-radius: 10%;
+  margin-top: 30px;
+}
+
+/*Add Subscription-----------------------------*/
+.subs {
+display: flex;
+min-height: 100vh;
+}
+
+.plan-options-box {
+  width:350px;
+  height: 300px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.plan-button {
+  background-color: black;
+  color: white;
+  font-weight: bolder;
+  width: 130px;
+  height: 50px;
+  margin-top: 30px;
+  border-radius: 10%;
+}
+
+.edit-buttons {
+  color: white;
+  background-color: black;
+  font-weight: bolder;
+  margin-left: 70px;
+  margin-right: 7px;
+}
+
+.delete-buttons {
+  color: white;
+  background-color: black;
+  font-weight: bolder;
+  margin-left: 10pxpx;
+  margin-right: 7px;
+}
+
+.sub-title {
+  font-weight: bolder;
+  font-size: larger;
+  margin-left: 70px;
+}
+
+.plan-price {
+  margin-left: 70px;
+}
+
+.sub-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -52,34 +129,7 @@ border: 2.5px solid black
     ". . ."
     ". . ."
     ". . .";
-}
-
-/*Add Subscription-----------------------------*/
-.subs {
-background-color: plum;
-display: flex;
-}
-
-.plan-options-box {
-  background-color: red;
-  width:300px;
-  height: 300px;
-  border: 2px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.plan-options-title {
-  background-color: royalblue;
-}
-
-.plan-button {
-  background-color: seagreen;
-  width: 130px;
-  height: 50px;
-  margin-top: 30px;
-  border-radius: 10%;
+    width: 100%;
 }
 
 /*Subscriptions---------------------------------*/

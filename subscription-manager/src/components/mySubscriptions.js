@@ -51,15 +51,16 @@ const MySubscriptions = () => {
     }
 
     return <div>
+        <h2 className='current-subs'>Your Current Subscriptions</h2>
         {subs.map(sub => {
             const {sub_title, sub_plan_title, sub_price, my_subscriptions_id, sub_id} = sub
             return (
             <div>
-               <p>{sub_title}</p>
-                <p>{sub_plan_title}</p>
-                <p>${sub_price}</p>
-                <button onClick={() => handleToggleSubPlanView(sub_id, my_subscriptions_id)}>Edit Plan</button>
-                <button onClick={() => handleDelete(my_subscriptions_id)}>Delete Subscription</button>
+               <p className='sub-title'>{sub_title}</p>
+                <p className='plan-price'>{sub_plan_title}</p>
+                <p className='plan-price'>{sub_price}</p>
+                <button onClick={() => handleToggleSubPlanView(sub_id, my_subscriptions_id)} className='edit-buttons'>Edit Plan</button>
+                <button onClick={() => handleDelete(my_subscriptions_id)} className='delete-buttons'>Delete Subscription</button>
             </div>
             )
         })}
@@ -68,7 +69,7 @@ const MySubscriptions = () => {
                 <h2 className='plan-options-title'>Subscription Plan Options</h2>
                 {subPlans.map((singleSubPlan) => (
                     <button onClick={() => handleEdit(singleSubPlan.sub_plan_id)} className='plan-button'>
-                    {singleSubPlan.sub_plan_title} ${singleSubPlan.sub_price}
+                    {singleSubPlan.sub_plan_title} {singleSubPlan.sub_price}
                     </button>
                 ))}
             </div>

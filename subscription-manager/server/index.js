@@ -12,7 +12,6 @@ app.use(express.json());
 
 //CONTROLLERS
 const authController = require("./controllers/authController");
-const mySubscriptionsController = require("./controllers/mySubscriptionsController");
 const addController = require("./controllers/addController");
 
 //USER SESSION

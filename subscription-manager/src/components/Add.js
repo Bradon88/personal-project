@@ -37,16 +37,18 @@ const Add = () => {
   console.log(subs);
   return (
     <div className='subs'>
+      <div className='sub-list'>
       {subs.map((sub) => {
         return <Subscriptions sub={sub} key={sub.sub_id} handleGetSubPlans={handleGetSubPlans} subPlanView={subPlanView} subPlans={subPlans}/>;
       })}
+      </div>
       {subPlanView ? (
         <div className='plan-options-box'>
             <h2 className='plan-options-title'>Subscription Plan Options</h2>
           {subPlans.map((singleSubPlan) => (
             <button onClick={() => handleAddSubscription(singleSubPlan)} 
                     className='plan-button'>
-              {singleSubPlan.sub_plan_title} ${singleSubPlan.sub_price}
+              {singleSubPlan.sub_plan_title} {singleSubPlan.sub_price}
             </button>
           ))}
         </div>

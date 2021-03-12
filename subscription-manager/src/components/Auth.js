@@ -2,6 +2,7 @@ import {Component} from 'react'
 import {setUser} from '../redux/authReducer'
 import axios from 'axios'
 import {connect} from 'react-redux'
+import { useState, useEffect } from "react";
 
 class Login extends Component {
     constructor(){
@@ -11,6 +12,10 @@ class Login extends Component {
             password: ''
         }
     }
+
+//const Login = () => {
+    //const [email, setEmail] = useState('')
+    //const [password, setPassword] = useState('')
 
     handleEmail = (value) => {
         this.setState({email: value})
@@ -54,6 +59,7 @@ class Login extends Component {
                     placeholder = 'Enter Email'
                     type = 'email'
                     required
+                    className='auth-input-box'
                 />
                 <input
                     value = {this.state.password}
@@ -61,9 +67,10 @@ class Login extends Component {
                     type = 'password'
                     placeholder = 'Enter Password'
                     required
+                    className='auth-input-box'
                 />
-                <button onClick={this.handleLogin}>Login</button>
-                <button onClick={this.handleRegister}>Create an Account</button>
+                <button className='auth-buttons'onClick={this.handleLogin}>Login</button>
+                <button className='auth-buttons'onClick={this.handleRegister}>Create an Account</button>
                 </div>
             </div>
         )
