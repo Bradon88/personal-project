@@ -13,10 +13,6 @@ class Login extends Component {
         }
     }
 
-//const Login = () => {
-    //const [email, setEmail] = useState('')
-    //const [password, setPassword] = useState('')
-
     handleEmail = (value) => {
         this.setState({email: value})
     }

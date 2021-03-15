@@ -1,16 +1,24 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Subscriptions from "./Subscriptions";
+import {connect} from 'react-redux'
 
-const Add = () => {
+const Add = (props) => {
   const [subs, setSubs] = useState([]);
   const [subPlans, setSubPlans] = useState([]);
   const [subPlanView, setSubPlanView] = useState(false);
+
+  useEffect(() => {
+    console.log(props.authReducer.user_id)
+    if(!props.authReducer.user_id){
+      props.history.push('/')
+    }
+  }, [])
   
   useEffect(() => {
       axios.get("/api/subs").then((res) => {
           setSubs(res.data);
-        });
+        })
     }, []);
 
     const handleGetSubPlans = (id) => {
@@ -57,4 +65,8 @@ const Add = () => {
   );
 };
 
-export default Add;
+const mapStateToProps = (reduxState) => {
+  return reduxState
+}
+
+export default connect(mapStateToProps)(Add)

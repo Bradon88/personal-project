@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+
 const Subscriptions = (props) => {
   const { sub, handleGetSubPlans, subPlanView, subPlans } = props;
 
-  
 
   return (
     <div className='sub-buttons-box'>
@@ -18,4 +18,5 @@ const Subscriptions = (props) => {
   );
 };
 
-export default Subscriptions;
+
+export default Subscriptions

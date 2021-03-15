@@ -1,11 +1,19 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import {connect} from 'react-redux'
 
-const MySubscriptions = () => {
+const MySubscriptions = (props) => {
     const [subs, setSubs] = useState([])
     const [subPlanView, setSubPlanView] = useState(false)
     const [subPlans, setSubPlans] = useState([])
     const [mySubscriptionsId, setMySubscriptionsId] = useState(null)
+
+    useEffect(() => {
+        console.log(props.authReducer.user_id)
+        if(!props.authReducer.user_id){
+          props.history.push('/')
+        }
+      }, [])
     
     useEffect(() => {
         axios.get('/api/my-subs')
@@ -77,4 +85,8 @@ const MySubscriptions = () => {
     </div>
 }
 
-export default MySubscriptions
+const mapStateToProps = (reduxState) => {
+    return reduxState
+  }
+
+export default connect(mapStateToProps)(MySubscriptions)
