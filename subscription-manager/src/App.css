@@ -10,11 +10,15 @@ align-items: center;
 
 .title {
   color: white;
+  font-family: copperplate;
+  font-size: xx-large;
 }
 
 .links {
   color: white;
   font-weight: bolder;
+  font-family: copperplate;
+  font-size: large;
 }
 
 @media screen and (max-width: 645px) {
@@ -51,6 +55,7 @@ background-color: black;
 color: white;
 font-weight: bolder;
 margin-top: 10px;
+font-family: copperplate;
 }
 
 .auth-input-box {
@@ -72,6 +77,8 @@ margin-top: 10px;
   margin-left: 10px;
   border-radius: 10%;
   margin-top: 30px;
+  font-family: copperplate;
+  font-size: large;
 }
 
 /*Add Subscription-----------------------------*/
@@ -92,6 +99,11 @@ min-height: 100vh;
   margin-right: 70px;
 }
 
+.plan-options-title {
+  font-family: copperplate;
+  font-size: x-large;
+}
+
 .plan-button {
   background-color: black;
   color: white;
@@ -100,6 +112,8 @@ min-height: 100vh;
   height: 50px;
   margin-top: 30px;
   border-radius: 10%;
+  font-family: copperplate;
+  font-size: medium;
 }
 
 .edit-buttons {
@@ -108,24 +122,31 @@ min-height: 100vh;
   font-weight: bolder;
   margin-left: 70px;
   margin-right: 7px;
+  font-family: copperplate;
+  font-size: medium;
 }
 
 .delete-buttons {
   color: white;
   background-color: black;
   font-weight: bolder;
-  margin-left: 10pxpx;
+  margin-left: 10px;
   margin-right: 7px;
+  font-family: copperplate;
+  font-size: medium;
 }
 
 .sub-title {
   font-weight: bolder;
-  font-size: larger;
+  font-size: xx-large;
   margin-left: 70px;
+  font-family: copperplate;
 }
 
 .plan-price {
   margin-left: 70px;
+  font-family: copperplate;
+  font-size: large;
 }
 
 .sub-list {
@@ -145,6 +166,13 @@ min-height: 100vh;
     display: flex;
     flex-direction: column;
   }
+}
+
+.current-subs-title {
+  font-family: copperplate;
+  font-size: xx-large;
+  background-color: black;
+  color: white;
 }
 
 /*Subscriptions---------------------------------*/

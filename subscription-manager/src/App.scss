@@ -1,0 +1,29 @@
+.header {
+    background-color: black;
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    }
+    
+    .title {
+      color: white;
+      font-family: copperplate;
+      font-size: xx-large;
+    }
+    
+    .links {
+      color: white;
+      font-weight: bolder;
+      font-family: copperplate;
+      font-size: large;
+    }
+    
+    @media screen and (max-width: 645px) {
+      .header {
+      display: flex;
+      flex-direction: column;
+      height: 150px;
+      }
+    }

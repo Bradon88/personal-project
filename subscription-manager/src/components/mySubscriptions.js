@@ -59,7 +59,7 @@ const MySubscriptions = (props) => {
     }
 
     return <div>
-        <h2 className='current-subs'>Your Current Subscriptions</h2>
+        <h2 className='current-subs-title'>Your Current Subscriptions</h2>
         {subs.map(sub => {
             const {sub_title, sub_plan_title, sub_price, my_subscriptions_id, sub_id} = sub
             return (
